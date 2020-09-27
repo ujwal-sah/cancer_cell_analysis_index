@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer Cell Analysis</title>
+  <style>
+  body {
+	background-image: url("https://www.statnews.com/wp-content/uploads/2019/02/Native-Article-Image-645x645.jpg");
+        background-repeat:no-repeat;
+       background-size:cover;
+} 
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Cancer Cell Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Clump" placeholder="Clump" required="required" />
+        <input type="text" name="UnifSize" placeholder="UnifSize" required="required" />
+		<input type="text" name="UnifShape" placeholder="UnifShape" required="required" />
+		<input type="text" name="MargAdh" placeholder="MargAdh" required="required" />
+		<input type="text" name="SingEpiSize" placeholder="SingEpiSize" required="required" />
+		<br>
+		<input type="text" name="BareNuc" placeholder="BareNuc" required="required" />
+		<input type="text" name="BlandChrom" placeholder="BlandChrom" required="required" />
+		<input type="text" name="NormNucl" placeholder="NormNucl" required="required" />
+		<input type="text" name="Mit" placeholder="Mit" required="required" />
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Analyse</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
